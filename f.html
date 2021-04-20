@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="f.css">
+    <title>HTML</title>
+</head>
+<body>
+    
+      
+      <div style="padding-left:16px">
+      </div>
+    <header>
+        <h1>Tabulky v HTML</h1>
+    </header>
+    <div class="topnav">
+        <a href="h.html">Multimedia a HTML</a>
+        <a class="active" href="f.html">Vizitka Osobnosti</a>
+        <a href="k.html">Fotogalerie</a>
+        
+      </div>
+    <main>
+        <h2>Slavná osobnost: </h2>
+        <table>
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th>Portrét</th>
+                    <th colspan="2">Základní údaje</th>
+                    <th>Významné činy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3"><img src="jan-zizka-z-trocnova_dotyk-400-16x9.jpg" alt="ziska"></td>
+                    <td colspan="2">Jan Žižka</td>
+                    <td rowspan="4">vyhrané bitvy: Bitva u Živohoště, Bitva u Nekmíře, Bitva u Sudoměře, Bitva u Mladé Vožice...</td>
+                </tr>
+                <tr>
+                    <td>1360 Trocnov</td>
+                    <td>11. října 1424 Přibyslav</td>
+                </tr>
+                <tr>
+                    <td colspan="2" rowspan="2">vojevůdce</td>
+                </tr>
+                <tr>
+                    <td>Šiška</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"><a href="https://cs.wikipedia.org/wiki/Jan_%C5%BDi%C5%BEka">wikipedie</a></td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+    <footer>
+        <hr class="new1">
+        <h3>@Vojtovic</h3>
+      </footer>
+</body>
+</html>

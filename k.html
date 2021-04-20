@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fotogalerie</title>
+    <link rel="stylesheet" href="f.css">
+</head>
+<body>
+    <h1>Fotogalerie</h1>
+    <div class="topnav">
+    <a href="h.html">Multimedia a HTML</a>
+    <a href="f.html">Vizitka Osobnosti</a>
+    <a class="active" href="k.html">Fotogalerie</a>
+    
+  </div>
+
+
+    <div class="row">
+        <div class="column"><figcaption>
+          <img src="velkeppp001.jpg" alt="Bruxa" width="450" height="600" onclick="openModal();currentSlide(1)" class="hover-shadow">
+       <p>Bruxa</p>
+        </div></figcaption>
+       
+        <div class="column"><figcaption>
+          <img src="velkeppp002.jpg" alt="Vesemir" width="450" height="600" onclick="openModal();currentSlide(2)" class="hover-shadow">
+        <p> Vesemir</p></div></figcaption>
+
+        <div class="column"><figcaption>
+          <img src="velkeppp003.jpg" alt="Barghest" width="450" height="600" onclick="openModal();currentSlide(3)" class="hover-shadow">
+          <p>Barghest</p></div></figcaption>
+
+        <div class="column"><figcaption>
+          <img src="velkeppp004.jpg" alt="Přelud" width="450" height="600" onclick="openModal();currentSlide(4)" class="hover-shadow">
+          <p>Přelud</p></div></figcaption>
+
+          <div class="column"><figcaption>
+            <img src="maleppp.jpg" alt="Striga" width="450" height="300" onclick="openModal();currentSlide(5)" class="hover-shadow">
+            <p>Striga</p></div></figcaption>
+
+          <div class="column"><figcaption>
+            <img src="maleppp001.jpg" alt="Geralt" width="450" height="300" onclick="openModal();currentSlide(6)" class="hover-shadow">
+            <p>Geralt</p></div></figcaption>
+
+          <div class="column"><figcaption>
+            <img src="maleppp002.jpg" alt="Ciri" width="450" height="300" onclick="openModal();currentSlide(7)" class="hover-shadow"> 
+            <p>Ciri</p></div></figcaption>
+            
+          <div class="column"><figcaption>
+            <img src="maleppp003.jpg" alt="Divoký Hon" width="450" height="300" onclick="openModal();currentSlide(8)" class="hover-shadow">
+            <p>Divoký Hon</p></div></figcaption>
+      </div>
+      
+      <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img id="expandedImg" style="width:50%">
+        <div id="imgtext"></div>
+      </div>
+      
+     
+      <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+      
+          <div class="mySlides">
+            <div class="numbertext">1 / 8</div>
+            <img src="velkeppp001.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">2 / 8</div>
+            <img src="velkeppp002.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">3 / 8</div>
+            <img src="velkeppp003.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">4 / 8</div>
+            <img src="velkeppp004.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">5 / 8</div>
+            <img src="maleppp.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">6 / 8</div>
+            <img src="maleppp001.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">7 / 8</div>
+            <img src="maleppp002.jpg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <div class="numbertext">8 / 8</div>
+            <img src="maleppp003.jpg" style="width:100%">
+          </div>
+      
+      
+          <!-- Next/previous controls -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      
+          <!-- Caption text -->
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+
+
+
+         
+        </div>
+      </div>
+
+
+
+
+
+
+
+      
+      <script>
+        // Open the Modal
+        function openModal() {
+          document.getElementById("myModal").style.display = "block";
+        }
+        
+        // Close the Modal
+        function closeModal() {
+          document.getElementById("myModal").style.display = "none";
+        }
+        
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          var captionText = document.getElementById("caption");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+        </script>
+
+
+
+      
+<footer>
+  <hr class="new1">
+  <h3>@Vojtovic</h3>
+</footer>
+    
+</body>
+</html>
